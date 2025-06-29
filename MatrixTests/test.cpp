@@ -63,19 +63,7 @@ TEST(MatrixTests, NullColumnsMatrix)
 
 	int** newMatrix = operation.MultiplicateMatrixByNumber(matrix, rows, columns, number);
 
-	if (newMatrix == nullptr)
-	{	
-		operation.deleteMatrix(matrix, rows, columns);
-		operation.deleteMatrix(newMatrix, rows, columns);
-		EXPECT_TRUE(true);
-	}	
-	else
-	{
-		operation.deleteMatrix(matrix, rows, columns);
-		operation.deleteMatrix(newMatrix, rows, columns);
-		EXPECT_FALSE(false);
-	}
-		
+	EXPECT_TRUE(newMatrix == nullptr);
 }
 
 TEST(MatrixTests, MultiplicationCorrect)
@@ -88,17 +76,6 @@ TEST(MatrixTests, MultiplicationCorrect)
 	operation.fillMatrix(matrix, rows, columns);
 
 	int** newMatrix = operation.MultiplicateMatrixByNumber(matrix, rows, columns, number);
-
-	if (newMatrix != nullptr)
-	{
-		operation.deleteMatrix(matrix, rows, columns);
-		operation.deleteMatrix(newMatrix, rows, columns);
-		EXPECT_TRUE(true);
-	}
-	else
-	{
-		operation.deleteMatrix(matrix, rows, columns);
-		operation.deleteMatrix(newMatrix, rows, columns);
-		EXPECT_FALSE(false);
-	}
+	
+	EXPECT_TRUE(newMatrix != nullptr);
 }

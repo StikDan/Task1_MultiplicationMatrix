@@ -8,7 +8,7 @@
 // TODO: Функции
 int** MatrixOperation::MultiplicateMatrixByNumber(int** sourceMatrix, int sourceRows, int sourceColumns, int multiplicationNumber)
 {
-	if(sourceMatrix == nullptr)
+	if(sourceColumns <= 0 || sourceRows <= 0 || sourceMatrix == nullptr)
 		return nullptr;
 
 	int** newMatrix = createMatrix(sourceRows, sourceColumns);
